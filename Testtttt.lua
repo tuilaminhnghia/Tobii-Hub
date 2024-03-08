@@ -28,7 +28,7 @@ local Tabs = {
 }
 
 if game.CoreGui:FindFirstChild("TobiiHubOpenClose") then
-    game.CoreGui:FindFirstChild("TobiiHubXOpenClose"):Destroy()
+    game.CoreGui:FindFirstChild("TobiiHubOpenClose"):Destroy()
 end
 
 local UIStroke = Instance.new("UIStroke")
@@ -58,4 +58,15 @@ UICorner.Parent = ImageButton
 ImageButton.MouseButton1Down:connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,127,false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,127,false,game)
+end)
+
+local Options = TobiiHub.Options
+
+do
+
+game:GetService("Players").LocalPlayer.Idled:connect(
+function()
+    game:GetService("VirtualUser"):Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+    
+    game:GetService("VirtualUser"):Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
 end)
