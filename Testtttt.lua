@@ -1654,8 +1654,8 @@ end)
     end)
     
     Tabs.Main14:AddButton({
-        Title = "Join Zalo - SIMP ROSE",
-        Description = "Invite Zalo SIMP ROSE",
+        Title = "Facebook-Owner",
+        Description = "Follow me",
         Callback = function()
             setclipboard(_G.Discord)
         end
