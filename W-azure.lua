@@ -1,4 +1,4 @@
-repeat wait() until getgenv().LoadUi and getgenv().IslandCaller and getgenv().SettingManager 
+
 local Title = "W-azure" .. (getgenv().Premium and " [Premium]" or "")
 local SubTitle = "True V2 discord.gg/w-azure"
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
