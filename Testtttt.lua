@@ -27,22 +27,6 @@ local Tabs = {
     Main14 = Window:AddTab({ Title = "Tab Setting", Icon = "" }),
 }
 
-if game.CoreGui:FindFirstChild("TobiiHubOpenClose") then
-    game.CoreGui:FindFirstChild("TobiiHubOpenClose"):Destroy()
-end
-
-local UIStroke = Instance.new("UIStroke")
-local UICorner = Instance.new("UICorner")
-
-local ScreenGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
-
-local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "TobiiHubOpenClose"
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
