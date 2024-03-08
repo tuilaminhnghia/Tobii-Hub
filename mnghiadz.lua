@@ -1,6 +1,6 @@
-_G.Key_System = false
+_G.Key_System = true
 _G.Version = "Version: 2.2.5"
-_G.Discord = "https://zalo.me/g/nkticm912"
+_G.Discord = "https://www.facebook.com/tuilaminhnghia"
 
 -- Anti Lag
 
