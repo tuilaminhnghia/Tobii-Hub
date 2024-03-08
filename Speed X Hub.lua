@@ -4,10 +4,10 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 loadstring(game:HttpGet("https://raw.githubusercontent.com/tuilaminhnghia/Tobii-Hub/main/mnghiadz.lua"))()
 repeat wait() until game:IsLoaded()
 local Window = SpeedHubX:CreateWindow({
-    Title = "Pknz Hub| ".._G.Version,
-    SubTitle = "by KhoiNguyen",
+    Title = "Tobii Hub-Blox Fruit ".._G.Version,
+    SubTitle = "by Tobii",
     TabWidth = 160,
-    Size = UDim2.fromOffset(560, 350),
+    Size = UDim2.fromOffset(600, 355),
     Acrylic = true, 
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.Delete 
@@ -28,8 +28,8 @@ local Tabs = {
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" }),
 }
 
-if game.CoreGui:FindFirstChild("SpeedHubXOpenClose") then
-    game.CoreGui:FindFirstChild("SpeedHubXOpenClose"):Destroy()
+if game.CoreGui:FindFirstChild("TobiiHubOpenClose") then
+    game.CoreGui:FindFirstChild("TobiiHubXOpenClose"):Destroy()
 end
 
 local UIStroke = Instance.new("UIStroke")
@@ -39,7 +39,7 @@ local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Name = "SpeedHubXOpenClose"
+ScreenGui.Name = "TobiiHubOpenClose"
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -442,16 +442,16 @@ end
 	
 function LoadSettings()
     if readfile and writefile and isfile and isfolder then
-        if not isfolder("SpeedHubX_V2") then
-            makefolder("SpeedHubX_V2")
+        if not isfolder("TobiiHub_V2") then
+            makefolder("TobiiHub_V2")
         end
-        if not isfolder("SpeedHubX_V2/Blox Fruits/") then
-            makefolder("SpeedHubX_V2/Blox Fruits/")
+        if not isfolder("TobiiHub_V2/Blox Fruits/") then
+            makefolder("TobiiHub_V2/Blox Fruits/")
         end
-        if not isfile("SpeedHubX_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
-            writefile("SpeedHubX_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
+        if not isfile("TobiiHub_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+            writefile("SpeedHubTobiiHub_V2X_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(_G.Settings))
         else
-            local Decode = game:GetService("HttpService"):JSONDecode(readfile("SpeedHubX_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+            local Decode = game:GetService("HttpService"):JSONDecode(readfile("TobiiHub_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
             for i,v in pairs(Decode) do
                 _G.Settings[i] = v
             end
@@ -463,15 +463,15 @@ end
 
 function SaveSettings()
     if readfile and writefile and isfile and isfolder then
-        if not isfile("SpeedHubX_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
+        if not isfile("TobiiHub_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json") then
             LoadSettings()
         else
-            local Decode = game:GetService("HttpService"):JSONDecode(readfile("SpeedHubX_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
+            local Decode = game:GetService("HttpService"):JSONDecode(readfile("TobiiHub_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json"))
             local Array = {}
             for i,v in pairs(_G.Settings) do
                 Array[i] = v
             end
-            writefile("SpeedHubX_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
+            writefile("TobiiHub_V2/Blox Fruits/" .. game.Players.LocalPlayer.Name .. ".json", game:GetService("HttpService"):JSONEncode(Array))
         end
     else
         return warn("Status: error")
@@ -1770,7 +1770,7 @@ task.spawn(function()
     end
 end)
 
-FastAttack = {"Slow","Fast","Extreme",}
+FastAttack = {"Slow","Fast Attack","Supper Fast Attack",}
 
 local SetAttack = Tabs.Main:AddDropdown("DropdownAttackType", {
     Title = "Attack Type",
@@ -1785,9 +1785,9 @@ SetAttack:OnChanged(function(a)
 	SelectSpeedFast = a
 	if SelectSpeedFast == "Slow" then
 		_G.Fast_Delay = 10
-	elseif SelectSpeedFast == "Fast" then
+	elseif SelectSpeedFast == "Fast Attack" then
 		_G.Fast_Delay = 0.029
-	elseif SelectSpeedFast == "Extreme" then
+	elseif SelectSpeedFast == "Supper Fast Attack" then
 		_G.Fast_Delay = 0
 	end
 end)
