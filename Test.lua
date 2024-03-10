@@ -2768,7 +2768,7 @@ Tabs.Shop:AddButton({
 local Farming = Tabs.SettingFarm:AddSection("Setting Farm")
 local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 
-    local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
+    local DropdownDelayAttack = Tabs.SettingFarm:AddDropdown("DropdownDelayAttack", {
         Title = "Select Speed Attack",
         Values = listfastattack,
         Multi = false,
@@ -2783,8 +2783,5 @@ local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 		_G.Fast_Delay = 0.175
 	elseif _G.FastAttack_Mode == "Super Fast Attack" then
 		_G.Fast_Delay = 0.1
-	end
+    end 
 end)
-
-
-
