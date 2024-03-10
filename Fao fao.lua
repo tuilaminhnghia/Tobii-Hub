@@ -1,22 +1,3 @@
---[[  
-____  _              _____ _     _   ____                       
-/ ___|(_) ___ _   _  |_   _| |__ (_) / ___| _ __   __ _  ___ ___ 
-\___ \| |/ _ \ | | |   | | | '_ \| | \___ \| '_ \ / _` |/ __/ _ \
- ___) | |  __/ |_| |   | | | | | | |  ___) | |_) | (_| | (_|  __/
-|____/|_|\___|\__,_|   |_| |_| |_|_| |____/| .__/ \__,_|\___\___|
-                                           |_|                                         
-Siêu Thị Space Cảm Ơn Bạn Đã Tin Tưởng Và Sử Dụng Dịch Vụ Của Chúng Tôi, Nếu Thấy Hữu Ít Hãy Chia Sẻ Cho Bạn Bè Của Bạn !!
-- Website: sieuthispace.xyz
-- Page: fb.com/dichvuspace
-- Facebook Admin: fb.com/minhtien.dino
-
---// Lưu Ý:
-- Không Được Share Hay Crack Mã Nguồn Này Cho Ai! Nếu Không Bạn Sẽ Bị Ban IP Khỏi Website Vĩnh Viễn!
-- Chúng Tôi Không Nhận Hỗ Trợ Những Mã Nguồn Miễn Phí, Xin Đừng Bảo Vì Sao. Tạo Ticket Hỗ Trợ Của Website Tại: https://dash.sieuthispace.xyz/client/ticket
-- Nếu Bạn Edit Source Và Up Web Share Nhớ Obfuscate Script. Nếu Bạn Có Tiền Thì Sử Dụng: Lura.Ph, Luarmor.Net | Nếu Bạn Không Có Tiền Thì Dùng: luaobfuscate.com, MoonSec, 77Fuscate,... Nhé!
-]]
----///--------------------------------------------------------------\\\---
-----------------------------------------------------------------------------------------------------------------------------------------------
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -24,8 +5,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/tuilaminhnghia/Tobii-
 ----------------------------------------------------------------------------------------------------------------------------------------------
 repeat wait() until game:IsLoaded()
 local Window = Fluent:CreateWindow({
-    Title = "Fai Fao Hub | Blox Fruits",
-    SubTitle = "Version 2.3",
+    Title = "Tobii | Blox Fruits",
+    SubTitle = "by Minh Nghia",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
     Acrylic = true,
@@ -33,7 +14,7 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Profile = WWindow:AddTab({ Title = "Profile Owner". Icon = "profile" }),
+    Profile = Window:AddTab({ Title = "Profile Owner", Icon = "profile" }),
     Main = Window:AddTab({ Title = "Main", Icon = "home" }),
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
@@ -2607,6 +2588,14 @@ end)
         end
     end)
 
+
+    Tabs.Profile:AddButton({
+        Title = "Facebook - Minh Nghia",
+        Description = "Profile Owner",
+        Callback = function()
+            setclipboard(_G.Discord)
+        end
+    })
 
     local ToggleLevel = Tabs.Main:AddToggle("ToggleLevel", {
         Title = "Auto Level",
