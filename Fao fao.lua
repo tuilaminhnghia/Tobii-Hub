@@ -34,9 +34,9 @@ local Tabs = {
 
     Items = Window:AddTab({ Title = "Tab Items", Icon = "swords" }),
 
-    LocalPlayer = Window:AddTab({ Title = "Tab Local Player", Icon = "" })
+    LocalPlayer = Window:AddTab({ Title = "Tab Local Player", Icon = "" }),
 
-    PVP = Window:AddTab({Title = "Tab PVP", Icon = "box" })
+    PVP = Window:AddTab({Title = "Tab PVP", Icon = "box" }),
 
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),    
 
