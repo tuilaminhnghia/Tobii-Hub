@@ -14,7 +14,7 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Profile = Window:AddTab({ Title = "Profile Owner", Icon = "profile" }),
+    Profile = Window:AddTab({ Title = "Profile Owner", Icon = "" }),
     Main = Window:AddTab({ Title = "Main", Icon = "home" }),
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
