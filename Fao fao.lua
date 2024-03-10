@@ -8,13 +8,13 @@ local Window = Fluent:CreateWindow({
     Title = "Tobii | Blox Fruits",
     SubTitle = "by Minh Nghia",
     TabWidth = 160,
-    Size = UDim2.fromOffset(530, 350),
+    Size = UDim2.fromOffset(600, 355),
     Acrylic = true,
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Profile = Window:AddTab({ Title = "Profile Owner", Icon = "" }),
+    Profile = Window:AddTab({ Title = "Profile", Icon = "trash" }),
     Main = Window:AddTab({ Title = "Main", Icon = "home" }),
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
