@@ -24,7 +24,7 @@ local Tabs = {
     RaidAndDF = Window:AddTab({ Title = "Tab Raid And DF", Icon = "cherry" }),
     Race = Window:AddTab({ Title = "Tab Race", Icon = "chevrons-right" }),
     Items = Window:AddTab({ Title = "Tab Items", Icon = "swords" }),
-    LocalPlayer = Window:AddTab({ Title = "Tab Local Player", Icon = "" }),
+    LocalPlayer = Window:AddTab({ Title = "Tab Local Player", Icon = "rbxassetid://7743875629" }),
     PVP = Window:AddTab({Title = "Tab PVP", Icon = "box" }),
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
 }
@@ -2499,8 +2499,8 @@ ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton.Size = UDim2.new(0, 50, 0, 50)
-ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id=16024431693"
+ImageButton.Draggable = false
+ImageButton.Image = "rbxassetid://16696364378"
 ImageButton.MouseButton1Down:connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
@@ -2516,31 +2516,194 @@ end
 -- Hehe
 --------------------------------------------------------------------------------------------------------------------------------------------
 --Create Tabs
-local Farming = Tabs.Main:AddSection("Farming")
-local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 
-    local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
-        Title = "Select Fast Attack",
-        Description = "Chọn Tốc Độ Đánh",
-        Values = listfastattack,
-        Multi = false,
-        Default = 1,
-    })
-    DropdownDelayAttack:SetValue("Fast Attack")
-    DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttackFaiFao_Mode = Value
-	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
-		_G.Fast_Delay = 0.12
-	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
-		_G.Fast_Delay = 0.2
-	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
-		_G.Fast_Delay = 0.05
-	end
-end)
+Tabs.Shop:AddButton({
+    Title = "Redeem Code",
+    Callback = function()
+        function RedeemCode(value)
+            game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
+        end
+        for i,v in pairs(x2Code) do
+            RedeemCode(v)
+        end
+      end    
+})
 
-    local DropdownSelectWeapon = Tabs.Main:AddDropdown("DropdownSelectWeapon", {
-        Title = "Weapon",
-        Description = "Chọn Vũ Khí",
+Tabs.Shop:AddButton({
+    Title = "Teleport Old World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelMain")
+    end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Teleport New World",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelDressrosa")
+    end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Teleport Third Sea",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("TravelZou")
+    end    
+})
+
+local Shop = Tabs.Shop:AddSection("Fighting Shop")
+
+Tabs.Shop:AddButton({
+    Title = "Black Leg",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Fisman Karate",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyFishmanKarate")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Electrol",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectrol")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Super Human",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperHuman")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Death Step",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "ElectricClaw",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Sharkman Karate",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Dragon Talon",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "GodHuman",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodHuman")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Sanguine Art",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
+      end    
+})
+
+local Shop = Tabs.Shop:AddSection("Abilbies Shop")
+
+Tabs.Shop:AddButton({
+    Title = "Sky Jump[ $10,000 Beli ]",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Buso Haki [ $25,000 Beli ]",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Buso")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Observation haki [ $750,000 Beli ]",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk","Buy")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Soru [ $100,000 Beli ]",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Soru")
+      end    
+})
+
+local Shop = Tabs.Shop:AddSection("Misc Shop")
+
+Tabs.Shop:AddButton({
+    Title = "Reroll Rcae",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","1")
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Reroll","2")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Reset Stats",
+    Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","1")
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Refund","2")
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Buy Race Cyborg",
+    Callback = function()
+        local a = {
+            [1] = "CyborgTrainer",
+            [2] = "Buy"
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
+      end    
+})
+
+Tabs.Shop:AddButton({
+    Title = "Buy Race Ghoul",
+    Callback = function()
+        local a = {
+            [1] = "Ectoplasm",
+            [2] = "BuyCheck",
+            [3] = 4
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
+        local a = {
+            [1] = "Ectoplasm",
+            [2] = "Change",
+            [3] = 4
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
+      end    
+})
+
+
+
+
+    local DropdownSelectWeapon = Tabs.SettingFarm:AddDropdown("DropdownSelectWeapon", {
+        Title = "Select Weapon",
         Values = {'Melee','Sword','Blox Fruit'},
         Multi = false,
         Default = 1,
@@ -2588,6 +2751,30 @@ end)
             end)
         end
     end)
+
+
+local Farming = Tabs.SettingFarm:AddSection("Setting Farm")
+local listfastattack = {'Normal Attack','Fast Attack','Super Fast Attack'}
+
+    local DropdownDelayAttack = Tabs.Main:AddDropdown("DropdownDelayAttack", {
+        Title = "Select Speed Attack",
+        Values = listfastattack,
+        Multi = false,
+        Default = 1,
+    })
+    DropdownDelayAttack:SetValue("Fast Attack")
+    DropdownDelayAttack:OnChanged(function(Value)
+    _G.FastAttackFaiFao_Mode = Value
+	if _G.FastAttack_Mode == "Fast Attack" then
+		_G.Fast_Delay = 0.15
+	elseif _G.FastAttack_Mode == "Normal Attack" then
+		_G.Fast_Delay = 0.175
+	elseif _G.FastAttack_Mode == "Super Fast Attack" then
+		_G.Fast_Delay = 0.1
+	end
+end)
+
+
 
 
     Tabs.Profile:AddButton({
@@ -2927,9 +3114,8 @@ end)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------
 
-      Tabs.Main:AddButton({
+      Tabs.Shop:AddButton({
         Title = "Redeem All Code",
-        Description = "Nhập Hết Code",
         Callback = function()
             UseCode()
         end
