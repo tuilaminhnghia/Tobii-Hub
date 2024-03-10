@@ -14,18 +14,42 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Profile = Window:AddTab({ Title = "Profile", Icon = "trash" }),
-    Main = Window:AddTab({ Title = "Main", Icon = "home" }),
-    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
+    Profile = Window:AddTab({ Title = "Tab Profile", Icon = "users" }),
+
+    Shop = Window:AddTab({ Title = "Tab Shop", Icon = "shopping-cart" }),
+
+    SettingFarm = Window:AddTab({Title = "Setting Farm", Icon = "settings-2" }),
+
+    Main = Window:AddTab({ Title = "Tab Main", Icon = "home" }),
+
+	Misc = Window:AddTab({ Title = " Tab Misc", Icon = "list-plus" }),
+
+    MaterialAndMob = Window:AddTab({ Title = "Tab Material And Mob", Icon = "" }),
+
+    SeaEvent = Window:AddTab({ Title = "Tab Sea Event", Icon = "" }),
+
+    RaidAndDF = Window:AddTab({ Title = "Tab Raid And DF", Icon = "cherry" }),
+
+    Race = Window:AddTab({ Title = "Tab Race", Icon = "chevrons-right" }),
+
+    Items = Window:AddTab({ Title = "Tab Items", Icon = "swords" }),
+
+    LocalPlayer = Window:AddTab({ Title = "Tab Local Player", Icon = "" })
+
+    PVP = Window:AddTab({Title = "Tab PVP", Icon = "box" })
+
+    Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),    
+
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
+
     Player = Window:AddTab({ Title = "Player", Icon = "box" }),
+
     Teleport = Window:AddTab({ Title = "Island", Icon = "palmtree" }),
-    Fruit = Window:AddTab({ Title = "Fruit", Icon = "cherry" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "swords" }),
+
     Race = Window:AddTab({ Title = "Race V4", Icon = "chevrons-right" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "shopping-cart" }),
-	Misc = Window:AddTab({ Title = "Misc", Icon = "list-plus" }),
+
     Hop = Window:AddTab({ Title = "Hop", Icon = "wifi" }),
+
 }
 local Options = Fluent.Options
 do
