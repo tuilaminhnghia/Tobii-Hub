@@ -1,6 +1,9 @@
 _G.Key_System = true
 _G.Version = "Version: 2.2.5"
 _G.Discord = "https://www.facebook.com/tuilaminhnghia"
+_G.Facebook = "tobii_its"
+_G.Tiktok =  ""
+_G.Youtube =  ""
 
 -- Anti Lag
 
